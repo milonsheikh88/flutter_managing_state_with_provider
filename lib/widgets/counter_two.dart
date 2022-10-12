@@ -10,8 +10,8 @@ class CounterTwo extends StatelessWidget {
       color: Colors.yellow[100],
       padding: const EdgeInsets.all(10.0),
       child: Text(
-        // '${Provider.of<Increment>(context).counter}',
-         '${context.select<Increment, int>((Increment increment) => increment.counter)}',
+        // '${Provider.of<Increment>(context).getCounter}',
+         '${context.select<Increment, int>((Increment increment) => increment.getCounter)}',
         style: const TextStyle(fontSize: 24.0),
       ),
     );

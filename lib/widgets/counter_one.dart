@@ -13,8 +13,8 @@ class CounterOne extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            // '${Provider.of<Increment>(context).counter}',
-           '${context.watch<Increment>().counter}',
+            // '${Provider.of<Increment>(context).getCounter}',
+           '${context.watch<Increment>().getCounter}',
             style: const TextStyle(fontSize: 48.0),
           ),
           const SizedBox(height: 30,),
