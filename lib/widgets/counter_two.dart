@@ -7,7 +7,7 @@ class CounterTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Selector<Increment, int>(
-      selector: (BuildContext context, Increment increment) => increment.counter, builder: (_, int counter, __) {
+      selector: (BuildContext context, Increment increment) => increment.getCounter, builder: (_, int counter, __) {
         return Container(
           color: Colors.yellow[100],
           padding: const EdgeInsets.all(10.0),
