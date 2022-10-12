@@ -6,13 +6,13 @@ class CounterTwo extends StatelessWidget {
   const CounterTwo({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return  Consumer<Increment>(
-      builder: (_, Increment increment, __) {
+    return  Selector<Increment, int>(
+      selector: (BuildContext context, Increment increment) => increment.counter, builder: (_, int counter, __) {
         return Container(
           color: Colors.yellow[100],
           padding: const EdgeInsets.all(10.0),
           child: Text(
-            '${increment.counter}',
+            '$counter',
             style: const TextStyle(fontSize: 24.0),
           ),
         );

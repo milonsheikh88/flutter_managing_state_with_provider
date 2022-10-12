@@ -7,20 +7,21 @@ class CounterOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<Increment>(builder: (BuildContext context, Increment increment, Widget? child) {
+    return Selector<Increment, int>(
+        selector: (BuildContext context, Increment increment) => increment.counter, builder: (_, int counter, __) {
       return Container(
         color: Colors.red[100],
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             Text(
-              '${increment.counter}',
+              '$counter',
               style: const TextStyle(fontSize: 48.0),
             ),
             const SizedBox(height: 30,),
             ElevatedButton(
               style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(12)),
-              onPressed: () => increment.increment(),
+              onPressed: () => context.read<Increment>().increment(),
               child: const Text(
                 'Increment',
                 style: TextStyle(fontSize: 20.0),
