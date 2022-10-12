@@ -14,7 +14,7 @@ class CounterOne extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              '${increment.counter}',
+              '${increment.getCounter}',
               style: const TextStyle(fontSize: 48.0),
             ),
             const SizedBox(height: 30,),

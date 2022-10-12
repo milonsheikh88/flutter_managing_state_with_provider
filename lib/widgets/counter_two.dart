@@ -12,7 +12,7 @@ class CounterTwo extends StatelessWidget {
           color: Colors.yellow[100],
           padding: const EdgeInsets.all(10.0),
           child: Text(
-            '${increment.counter}',
+            '${increment.getCounter}',
             style: const TextStyle(fontSize: 24.0),
           ),
         );

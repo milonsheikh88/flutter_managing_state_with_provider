@@ -1,9 +1,15 @@
 import 'package:flutter/foundation.dart';
 
 class Increment with ChangeNotifier {
-  int counter=0;
+  int _counter=0;
+
+  int get getCounter {
+    return _counter;
+  }
+
   void increment() {
-    counter++;
+    _counter++;
     notifyListeners();
   }
+
 }
