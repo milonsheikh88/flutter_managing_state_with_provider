@@ -7,28 +7,28 @@ class CounterOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red[100],
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          Text(
-            // '${Provider.of<Increment>(context).counter}',
-           '${context.watch<Increment>().counter}',
-            style: const TextStyle(fontSize: 48.0),
-          ),
-          const SizedBox(height: 30,),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(12)),
-            // onPressed: () => Provider.of<Increment>(context, listen: false).increment(),
-            onPressed: () => context.read<Increment>().increment(),
-            child: const Text(
-              'Increment',
-              style: TextStyle(fontSize: 20.0),
+    return Consumer<Increment>(builder: (BuildContext context, Increment increment, Widget? child) {
+      return Container(
+        color: Colors.red[100],
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Text(
+              '${increment.counter}',
+              style: const TextStyle(fontSize: 48.0),
             ),
-          ),
-        ],
-      ),
-    );
+            const SizedBox(height: 30,),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(padding: const EdgeInsets.all(12)),
+              onPressed: () => increment.increment(),
+              child: const Text(
+                'Increment',
+                style: TextStyle(fontSize: 20.0),
+              ),
+            ),
+          ],
+        ),
+      );
+    });
   }
 }
