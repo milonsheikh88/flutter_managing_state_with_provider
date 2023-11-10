@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_managing_state_with_provider/models/increment.dart';
-import 'package:flutter_managing_state_with_provider/widgets/counter_one.dart';
-import 'package:flutter_managing_state_with_provider/widgets/middle_container.dart';
+import 'package:flutter_managing_state_with_provider/providers/increment_provider.dart';
+import 'package:flutter_managing_state_with_provider/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -13,8 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<Increment>(
-      create: (context) => Increment(),
+    return ChangeNotifierProvider<IncrementProvider>(
+      create: (context) => IncrementProvider(),
       child: MaterialApp(
         title: 'Managing state with provider',
         debugShowCheckedModeBanner: false,
@@ -27,42 +26,5 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Managing state with provider'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              color: Colors.blue[100],
-              padding: const EdgeInsets.all(20.0),
-              child: const Text(
-                'Managing state with provider',
-                style: TextStyle(fontSize: 22.0),
-              ),
-            ),
-            const SizedBox(height: 20.0),
-            const CounterOne(),
-            const SizedBox(height: 20.0),
-            const MiddleContainer(),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 

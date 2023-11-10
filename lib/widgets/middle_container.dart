@@ -10,10 +10,10 @@ class MiddleContainer extends StatelessWidget {
     return Container(
       color: Colors.grey[200],
       padding: const EdgeInsets.all(20.0),
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
-        children: const [
+        children: [
           ChildContainer(),
           SizedBox(width: 20.0),
           CounterTwo(),
