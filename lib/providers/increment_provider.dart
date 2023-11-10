@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-class Increment with ChangeNotifier {
+class IncrementProvider with ChangeNotifier {
   int _counter=0;
 
   int get getCounter {
